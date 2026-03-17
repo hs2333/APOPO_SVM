@@ -153,9 +153,7 @@ plot_decision_regions(mN, f"k-NN decision regions (k=N={kN})")
 plot_decision_regions(mv, f"k-NN decision regions (k={k_valid})")
 
 
-# # -----------------------------
-# # 6) (Optional) Neighbors for one example point
-# # -----------------------------
+# # 6) Neighbors for one example point
 # # Pick one test point and show its nearest neighbors under the final model
 # i0 = 0
 # x_star = X_test[i0:i0+1]
