@@ -1,0 +1,86 @@
+SVM Benchmark Report
+============================================================
+
+Model settings:
+  Kernel: rbf
+  C: 10
+  gamma: scale
+  Num train samples: 6616
+  Num test samples: 736
+
+Selected features:
+  - tBodyAccMag-mean()
+  - tBodyAccMag-std()
+  - tBodyGyro-mean()-X
+  - tBodyGyro-mean()-Y
+  - tBodyGyro-mean()-Z
+  - tBodyGyro-std()-X
+  - tBodyGyro-std()-Y
+  - tBodyGyro-std()-Z
+  - angle(X,gravityMean)
+  - angle(Y,gravityMean)
+  - angle(Z,gravityMean)
+
+Classification performance:
+  Accuracy: 0.938859
+  Training time (s): 0.180939
+
+Confusion matrix:
+[[117   6   0   0   0   0]
+ [ 10  95   2   0   0   0]
+ [  2   3  94   0   0   0]
+ [  1   0   0 116  12   0]
+ [  0   0   0   9 128   0]
+ [  0   0   0   0   0 141]]
+
+Classification report:
+              precision    recall  f1-score   support
+
+     walking       0.90      0.95      0.92       123
+    upstairs       0.91      0.89      0.90       107
+  downstairs       0.98      0.95      0.96        99
+     sitting       0.93      0.90      0.91       129
+    standing       0.91      0.93      0.92       137
+      laying       1.00      1.00      1.00       141
+
+    accuracy                           0.94       736
+   macro avg       0.94      0.94      0.94       736
+weighted avg       0.94      0.94      0.94       736
+
+
+Single-sample inference benchmark:
+  Average latency (ms): 0.173394
+  Median latency (ms): 0.169900
+  P95 latency (ms): 0.195400
+  Min latency (ms): 0.158800
+  Max latency (ms): 0.306700
+  Throughput (inf/sec): 5767.208898
+
+Batch inference benchmark:
+  Batch size: 736
+  Avg batch time (ms): 65.428028
+  Median batch time (ms): 64.949750
+  Batches/sec: 15.283970
+  Samples/sec: 11249.001670
+
+System / hardware info:
+  platform: Windows-10-10.0.26100-SP0
+  system: Windows
+  release: 10
+  machine: AMD64
+  processor: AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+  physical_cores: 8
+  logical_cores: 16
+  cpu_freq_mhz_max: 3201.0
+  cpu_freq_mhz_current: 3201.0
+  total_ram_gb: 15.405948638916016
+  available_ram_gb: 4.719509124755859
+  python_version: 3.11.5
+  sklearn_version: 1.8.0
+
+Memory / storage:
+  Process RSS before training (MB): 191.820312
+  Process RSS after training (MB): 193.980469
+  Current process RSS (MB): 194.191406
+  Peak traced memory (MB): 0.617753
+  Saved model size (MB): 0.218393

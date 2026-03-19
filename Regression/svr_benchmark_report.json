@@ -1,0 +1,92 @@
+{
+  "model_settings": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale",
+    "epsilon": 0.01,
+    "n_lags": 20,
+    "imu_use_cols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "train_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "test_ids": [
+      7
+    ],
+    "max_train": 20000
+  },
+  "training": {
+    "x_train_shape": [
+      20170,
+      120
+    ],
+    "y_train_shape": [
+      20170,
+      2
+    ],
+    "training_time_sec": 47.43458640004974,
+    "model_size_mb": 37.08109188079834
+  },
+  "test_results": [
+    {
+      "seq_id": 7,
+      "num_samples": 30286,
+      "rmse_vx": 0.09799695187120955,
+      "rmse_vy": 0.1179607191147072,
+      "mae_vx": 0.07734612169594411,
+      "mae_vy": 0.09761940166603399,
+      "r2_vx": -0.0006064009361272937,
+      "r2_vy": -0.01919630154938723,
+      "rmse_speed_2d": 0.0782864581349561
+    }
+  ],
+  "single_sample_inference": {
+    "avg_latency_ms": 4.028730001300573,
+    "median_latency_ms": 3.9755500038154423,
+    "min_latency_ms": 3.778600017540157,
+    "max_latency_ms": 4.989300039596856,
+    "p95_latency_ms": 4.434379976009949,
+    "throughput_inf_per_sec_from_avg_latency": 248.2171800237731,
+    "num_runs": 50
+  },
+  "batch_inference": {
+    "batch_size": 30286,
+    "avg_batch_time_ms": 93718.19315998582,
+    "median_batch_time_ms": 92923.18924999563,
+    "batches_per_sec": 0.010670286806457157,
+    "samples_per_sec": 323.16030622036146,
+    "num_runs": 10
+  },
+  "system_info": {
+    "platform": "Windows-10-10.0.26100-SP0",
+    "system": "Windows",
+    "release": "10",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "physical_cores": 8,
+    "logical_cores": 16,
+    "cpu_freq_mhz_max": 3201.0,
+    "cpu_freq_mhz_current": 3201.0,
+    "total_ram_gb": 15.405948638916016,
+    "available_ram_gb": 2.859954833984375,
+    "python_version": "3.11.5",
+    "sklearn_version": "1.8.0"
+  },
+  "memory_info": {
+    "rss_before_train_mb": 812.46484375,
+    "rss_after_train_mb": 851.328125,
+    "current_rss_mb": 851.41796875,
+    "peak_traced_memory_mb": 37.41271686553955
+  }
+}

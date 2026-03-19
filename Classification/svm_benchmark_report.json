@@ -1,0 +1,116 @@
+{
+  "model_settings": {
+    "kernel": "rbf",
+    "C": 10,
+    "gamma": "scale",
+    "num_train_samples": 6616,
+    "num_test_samples": 736,
+    "feature_set": [
+      "tBodyAccMag-mean()",
+      "tBodyAccMag-std()",
+      "tBodyGyro-mean()-X",
+      "tBodyGyro-mean()-Y",
+      "tBodyGyro-mean()-Z",
+      "tBodyGyro-std()-X",
+      "tBodyGyro-std()-Y",
+      "tBodyGyro-std()-Z",
+      "angle(X,gravityMean)",
+      "angle(Y,gravityMean)",
+      "angle(Z,gravityMean)"
+    ]
+  },
+  "classification_performance": {
+    "accuracy": 0.938858695652174,
+    "training_time_sec": 0.18093859998043627,
+    "confusion_matrix": [
+      [
+        117,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        95,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        3,
+        94,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        116,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        9,
+        128,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        141
+      ]
+    ],
+    "classification_report_text": "              precision    recall  f1-score   support\n\n     walking       0.90      0.95      0.92       123\n    upstairs       0.91      0.89      0.90       107\n  downstairs       0.98      0.95      0.96        99\n     sitting       0.93      0.90      0.91       129\n    standing       0.91      0.93      0.92       137\n      laying       1.00      1.00      1.00       141\n\n    accuracy                           0.94       736\n   macro avg       0.94      0.94      0.94       736\nweighted avg       0.94      0.94      0.94       736\n"
+  },
+  "single_sample_inference": {
+    "avg_latency_ms": 0.17339410062413663,
+    "median_latency_ms": 0.16989995492622256,
+    "min_latency_ms": 0.15879992861300707,
+    "max_latency_ms": 0.30670000705868006,
+    "p95_latency_ms": 0.19539998029358685,
+    "throughput_inf_per_sec_from_avg_latency": 5767.208898114029,
+    "num_runs": 1000
+  },
+  "batch_inference": {
+    "batch_size": 736,
+    "avg_batch_time_ms": 65.42802833253518,
+    "median_batch_time_ms": 64.94974996894598,
+    "batches_per_sec": 15.28396966079342,
+    "samples_per_sec": 11249.001670343958,
+    "num_runs": 300
+  },
+  "system_info": {
+    "platform": "Windows-10-10.0.26100-SP0",
+    "system": "Windows",
+    "release": "10",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "physical_cores": 8,
+    "logical_cores": 16,
+    "cpu_freq_mhz_max": 3201.0,
+    "cpu_freq_mhz_current": 3201.0,
+    "total_ram_gb": 15.405948638916016,
+    "available_ram_gb": 4.719509124755859,
+    "python_version": "3.11.5",
+    "sklearn_version": "1.8.0"
+  },
+  "memory_info": {
+    "rss_before_train_mb": 191.8203125,
+    "rss_after_train_mb": 193.98046875,
+    "current_rss_mb": 194.19140625,
+    "peak_traced_memory_mb": 0.6177530288696289,
+    "model_size_mb": 0.21839332580566406
+  }
+}

@@ -1,0 +1,66 @@
+SVR Benchmark Report
+============================================================
+
+Model settings:
+  kernel: rbf
+  C: 10.0
+  gamma: scale
+  epsilon: 0.01
+  n_lags: 20
+  imu_use_cols: [1, 2, 3, 4, 5, 6]
+  train_ids: [1, 2, 3, 4, 5, 6]
+  test_ids: [7]
+  max_train: 20000
+
+Training:
+  X_train shape: (20170, 120)
+  y_train shape: (20170, 2)
+  Training time (s): 47.434586
+  Saved model size (MB): 37.081092
+
+Per-sequence regression performance:
+  Test seq 7:
+    num_samples: 30286
+    rmse_vx: 0.097997
+    rmse_vy: 0.117961
+    mae_vx: 0.077346
+    mae_vy: 0.097619
+    r2_vx: -0.000606
+    r2_vy: -0.019196
+    rmse_speed_2d: 0.078286
+
+Single-sample inference benchmark:
+  Average latency (ms): 4.028730
+  Median latency (ms): 3.975550
+  P95 latency (ms): 4.434380
+  Min latency (ms): 3.778600
+  Max latency (ms): 4.989300
+  Throughput (inf/sec): 248.217180
+
+Batch inference benchmark:
+  Batch size: 30286
+  Avg batch time (ms): 93718.193160
+  Median batch time (ms): 92923.189250
+  Batches/sec: 0.010670
+  Samples/sec: 323.160306
+
+System / hardware info:
+  platform: Windows-10-10.0.26100-SP0
+  system: Windows
+  release: 10
+  machine: AMD64
+  processor: AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+  physical_cores: 8
+  logical_cores: 16
+  cpu_freq_mhz_max: 3201.0
+  cpu_freq_mhz_current: 3201.0
+  total_ram_gb: 15.405948638916016
+  available_ram_gb: 2.859954833984375
+  python_version: 3.11.5
+  sklearn_version: 1.8.0
+
+Memory:
+  Process RSS before training (MB): 812.464844
+  Process RSS after training (MB): 851.328125
+  Current process RSS (MB): 851.417969
+  Peak traced memory (MB): 37.412717
