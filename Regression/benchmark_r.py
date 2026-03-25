@@ -13,7 +13,7 @@ import sklearn
 from sklearn.svm import SVR
 from sklearn.multioutput import MultiOutputRegressor
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 
 # =============================
@@ -360,9 +360,6 @@ def main():
 
         rmse_vxvy = np.sqrt(np.mean((y_pred - y_true) ** 2, axis=0))
         mae_vxvy = np.mean(np.abs(y_pred - y_true), axis=0)
-        r2_vxvy = [
-            r2_score(y_true[:, i], y_pred[:, i]) for i in range(y_true.shape[1])
-        ]
 
         rmse_speed_2d = np.sqrt(mean_squared_error(
             np.linalg.norm(y_true, axis=1),
@@ -372,7 +369,6 @@ def main():
         print(f"\n=== Test seq {sid} ===")
         print(f"RMSE vx,vy     : {rmse_vxvy}")
         print(f"MAE  vx,vy     : {mae_vxvy}")
-        print(f"R2   vx,vy     : {r2_vxvy}")
         print(f"RMSE speed2D   : {rmse_speed_2d:.6f}")
 
         all_test_results.append({
@@ -382,8 +378,6 @@ def main():
             "rmse_vy": float(rmse_vxvy[1]),
             "mae_vx": float(mae_vxvy[0]),
             "mae_vy": float(mae_vxvy[1]),
-            "r2_vx": float(r2_vxvy[0]),
-            "r2_vy": float(r2_vxvy[1]),
             "rmse_speed_2d": float(rmse_speed_2d),
         })
 
@@ -471,8 +465,6 @@ def main():
         report_lines.append(f"    rmse_vy: {result['rmse_vy']:.6f}")
         report_lines.append(f"    mae_vx: {result['mae_vx']:.6f}")
         report_lines.append(f"    mae_vy: {result['mae_vy']:.6f}")
-        report_lines.append(f"    r2_vx: {result['r2_vx']:.6f}")
-        report_lines.append(f"    r2_vy: {result['r2_vy']:.6f}")
         report_lines.append(f"    rmse_speed_2d: {result['rmse_speed_2d']:.6f}")
     report_lines.append("")
 
